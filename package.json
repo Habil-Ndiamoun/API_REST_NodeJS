@@ -1,0 +1,27 @@
+{
+  "name": "api_rest_nodejs",
+  "version": "1.0.0",
+  "description": "Développer une API REST sécuritaire en utilisant NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon --exec npx babel-node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habil-Ndiamoun/API_REST_NodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Habil-Ndiamoun/API_REST_NodeJS/issues"
+  },
+  "homepage": "https://github.com/Habil-Ndiamoun/API_REST_NodeJS#readme",
+  "dependencies": {
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.8",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
+  }
+}
