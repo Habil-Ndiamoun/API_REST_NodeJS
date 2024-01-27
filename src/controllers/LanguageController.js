@@ -15,12 +15,12 @@ const addLanguages = async(req, res) => {
     res.status(200).json(language);
 };
 
-
 //2.GET ALL
 const getLanguages = async(req, res) => {
     try
     {
         const languages = LanguageModel.find().populate("films");
+        console.log(languages);
         res.status(200).json(languages);
     }
     catch(err)
@@ -29,13 +29,23 @@ const getLanguages = async(req, res) => {
     }
 };
 
+//3.GET ONE (Afficher une langue avec ses films)
+const getLanguage = async(req, res) => {
+    const id = req.params.id;
+    const languageRecherchee = await LanguageModel.findById(id).populate("films");
 
+    if(!languageRecherchee)
+    {
+        res.status(400).json({Message: "La langue n'existe pas!"});
+    }
 
-
+    res.status(200).json(languageRecherchee);
+};
 
 
 
 module.exports = {
     addLanguages,
-    getLanguages
+    getLanguages,
+    getLanguage
 }
